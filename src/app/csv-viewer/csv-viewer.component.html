@@ -11,7 +11,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let row of csvData; let even = even" [ngClass]="{ 'even-row': even, 'odd-row': !even }">
-            <td *ngFor="let cell of row | keyvalue">{{ cell.value }}</td>
+            <td style="padding-right: 40px;" *ngFor="let cell of row | keyvalue">{{ cell.value }}</td>
           </tr>
         </tbody>
       </table>
