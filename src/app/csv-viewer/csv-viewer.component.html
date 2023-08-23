@@ -1,0 +1,24 @@
+<drag-and-drop *ngIf="csvData.length <= 0;" (notifyParentEvent)="onFileSelected($event)"></drag-and-drop>
+<div class="dashboard">
+  <app-chart></app-chart>
+  <div class="csv-area">
+    <div *ngIf="csvData.length > 0; else noData">
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let header of csvData[0] | keyvalue">{{ header.key }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of csvData; let even = even" [ngClass]="{ 'even-row': even, 'odd-row': !even }">
+            <td *ngFor="let cell of row | keyvalue">{{ cell.value }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noData>
+      <p *ngIf="errorMessage">{{ errorMessage }}</p>
+      <p *ngIf="!errorMessage"></p>
+    </ng-template>
+  </div>
+</div>

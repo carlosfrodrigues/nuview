@@ -1,0 +1,18 @@
+<div>
+<div class="chart">
+<div class="chart-container" style="flex-basis: 60%;">
+    <canvas #chartCanvas></canvas>
+</div>
+<div class="chart-container" style="flex-basis: 30%;">
+    <canvas #pieCanvas></canvas>
+</div>
+<div class="chart-container" style="flex-basis: 10%;">
+    <div *ngIf="sum > 0;">
+    <p>Entrada:</p> <p style="color: rgba(54, 162, 235, 0.7); font-weight: bold;">{{balance.get("positive")}}</p>
+    <p>Saída:</p> <p style="color: rgba(255, 99, 132, 0.7); font-weight: bold;">{{balance.get("negative")}}</p>
+    </div>
+  </div>
+</div>
+<div style="padding: 10px; margin-top: 10px;">
+</div>
+</div>

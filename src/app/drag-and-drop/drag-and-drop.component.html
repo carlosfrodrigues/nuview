@@ -1,0 +1,13 @@
+<div class="drag-drop-container"
+     (click)="openFileSelector()"
+     (dragover)="onDragOver($event)"
+     (dragleave)="onDragLeave($event)"
+     (drop)="onDrop($event)">
+  <div *ngIf="!isDragging" class="drag-drop-message">
+    Escolha um arquivo ou arraste aqui
+  </div>
+  <div *ngIf="isDragging" class="drag-drop-message">
+    Solte o arquivo aqui
+  </div>
+  <input type="file" style="display: none;" (change)="onFileSelected($event)">
+</div>

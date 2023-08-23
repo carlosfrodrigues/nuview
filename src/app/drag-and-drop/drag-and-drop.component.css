@@ -1,0 +1,13 @@
+.drag-drop-container {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+.drag-drop-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #777;
+}
